@@ -1,0 +1,51 @@
+*{
+    margin: 0;    /*초기화*/          
+    padding: 0;               /*초기화*/
+    text-align: center;         /*텍스트 정렬*/
+    text-decoration: none;          /*텍스트에 파란 밑줄 없에기*/
+    list-style: none;           /*리스트 스타일 없에기*/
+    color: #000;            /*글짜색 검정*/
+}           
+            
+.menu{          /*제일 큰 메뉴바 레이아웃*/
+    margin: 0 auto;         /*가운데 정렬*/
+    width: 200px; 
+    height: 50px;
+    overflow-y: hidden; 
+    transition: .7s;         /*가로 100px 없으면 마진 안됨*/
+}           
+            
+.menu>li{           /*메뉴1*/
+     width: 200px;           /*메뉴1 가로 100px*/
+     line-height: 50px;          /*행간*/
+}    
+
+.menu:hover{
+    height: 400px;
+}
+            
+.down>li{           /*미국1*/
+    height: 50px;          /*세로 0*/
+    background-color: slateblue;            /*백그라운색 */
+    overflow-y: hidden;         /*세로길면 짜르기*/
+    transition: .3s;            /**/
+}          
+                     
+.down{          /**/
+    overflow-y: hidden;         /**/
+}           /**/
+            /**/
+.down:hover{            /**/
+    height: 400px;          /**/
+}           /**/
+            /**/          /**/
+            /**/
+.uss>li{            /**/
+    height: 50px;           /**/
+    background-color: teal;         /**/
+}           /**/
+            /**/
+.down>li:hover{         /**/
+    height: 250px;          /**/
+}           /**/
+            /**/

@@ -1,0 +1,27 @@
+*{
+    list-style: none;
+    text-decoration: none;
+    /* text-align: center; */
+    background-color: rgb(54, 53, 53);
+    color: #fff;
+    
+}
+.ul>li{
+    margin: 7px;
+}
+
+.커피{ 
+    float: left;
+    width: 200px;
+    height: 200px;
+    text-align: left;
+    
+}
+
+.나와어울리는커피{
+       
+}
+
+.에스프레소음료{
+
+}

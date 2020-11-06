@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+ <title>공 튀기기</title>
+ <script>
+ var nX=0;
+ var nY=0;
+ var nStepSize=4;
+ var nStepX=nStepSize;
+ var nStepY=nStepSize;
+ var ball;
+ var nTimerID=0;
+ var nEndX=0;
+ var nEndY=0;
+ window.onload=function(){
+  init();
+  initEventListener();
+ }
+ function init(){
+  nTimerID=0;
+  var panel=document.getElementById("panel");
+  ball=document.getElementById("ball");
+  nEndX=panel.offsetWidth-ball.offsetWidth;
+  nEndY=panel.offsetHeight-ball.offsetHeight;
+ }
+ function initEventListener(){
+  document.getElementById("btn_start").addEventListener("click",function(){start();}, false);
+  document.getElementById("btn_stop").addEventListener("click",function(){stopMove();},false);
+ }
+ function start(){
+  if(nTimerID==0)
+   nTimerID=setInterval(startMove,25)
+ }
+ function startMove(){
+  nX+=nStepX;
+  nY+=nStepY;
+  if(nX>nEndX)
+   nStepX=-nStepSize;
+  if(nX<0)
+   nStepX=nStepSize;
+  if(nY>nEndY)
+   nStepY=-nStepSize;
+  if(nY<0)
+   nStepY=nStepSize;
+  ball.style.left=nX+"px";
+  ball.style.top=nY+"px";
+ }
+ function stopMove(){
+  if(nTimerID!=0){
+   clearInterval(nTimerID);
+   nTimerID=0;
+  }
+ }
+ </script>
+ <style>
+  body{font-size:9pt;}
+  #panel{width:500px;height:300px; border:1px solid #999; position:relative; margin:0 auto;}
+  #ball{position: absolute;left:70px; top:70px; width:70px; height:70px; border-radius:35px; background-color:pink;}
+  img{width:70px; height:70px;}
+  #nav{text-align: center; width:500px; margin:0 auto;}
+ </style>
+</head>
+<body>
+ <div id="panel">
+  <div id="ball"></div>
+ </div>
+ <br>
+ <div id="nav">
+  <button id="btn_start">Start</button>
+  <button id="btn_stop">Stop</button>
+ </div>
+</body>
